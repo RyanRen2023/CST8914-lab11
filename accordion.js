@@ -14,6 +14,8 @@ const accordionBtns = document.querySelectorAll(".accordion");
 accordionBtns.forEach((accordion) => {
   accordion.onclick = function () {
     this.classList.toggle("is-open");
+    let currentState = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", !currentState);
 
     let content = this.nextElementSibling;
     console.log(content);
